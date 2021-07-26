@@ -5,9 +5,8 @@ class Header extends React.Component {
 
     render() {
         return (
-            <h1
-                    title="Dragon">   
-            </h1>     );
+            <h1>HornedBeasts</h1>    
+             );
     }
 }
 

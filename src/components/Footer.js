@@ -7,7 +7,7 @@ class Footer extends React.Component {
         return (
             <p>   
                 Amneh AL-Momany
-            </p>     );
+            </p>     )
     }
 }
 
