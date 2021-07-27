@@ -5,6 +5,39 @@ The website is talking about the Horned and gives an idea about the Horned so it
 + and  2 images of Horned which has discription for each of them to explain what each picture means 
 + and every picture has short title too which it shows above the discription and the image itself.
 
+## Feature #1: Display images
++ Number and name of feature: #1: Display images
+
++ Estimate of time needed to complete: 15 mins
+
++ Start time: 9:30
+
++ Finish time: 9:45
+
++ Actual time needed to complete :15 mins
+
+## Feature #2: Allow users to vote for their favorite beast
++ Number and name of feature: #2: Allow users to vote for their favorite beast
+
++ Estimate of time needed to complete: 20 mins
+
++ Start time: 9:46
+
++ Finish time: 10:05
+
++ Actual time needed to complete : 25 mins
+
+## Feature #3: Bootstrap
++ Number and name of feature: #3: Bootstrap
+
++ Estimate of time needed to complete: 15 mins
+
++ Start time: 10:07
+
++ Finish time: 10:22
+
++ Actual time needed to complete : 15 mins
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
