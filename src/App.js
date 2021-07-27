@@ -4,10 +4,22 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      click: 20,
+    };
+  }
+
+  getclickedImg = () => {
+    this.setState({
+      click: this.state.click - 1,
+    });
+  };
   return (
     <div>
       <Header />
-      <Main />
+      <Main /> {this.state.cookiesJar}
       <Footer />
     </div>
   );
