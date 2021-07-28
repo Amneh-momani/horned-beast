@@ -1,22 +1,8 @@
 import React from "react";
-import Horned from "../assest/horned.json";
 import HornedBeasts from "./HornedBeasts";
+import Horned from "./horned.json";
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numberOfclick: 0
-    };
-  }
-  clicking = () => {
-    this.setState({
-      numberOfclick: this.state.numberOfclick + 1
-    });
-    this.props.getclickedImg({
-      data: 'one'
-    });
-  }
   render() {
     return (
       <div>
@@ -24,10 +10,12 @@ class Main extends React.Component {
           return (
             <HornedBeasts
               title={imag.title}
-              description={imag.description} {this.state.numberOfclick}
+              description={imag.description}
               image_url={imag.image_url}
               horns={imag.horns}
               keyword={imag.keyword}
+              modalVisible={this.props.modalVisible}
+              modalData={this.props.modalData}
             />
           );
         })}
