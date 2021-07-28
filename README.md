@@ -38,6 +38,19 @@ The website is talking about the Horned and gives an idea about the Horned so it
 
 + Actual time needed to complete : 15 mins
 
+## Feature #1: Display a Modal
++ Number and name of feature: #1: Display a Modal
+
++ Estimate of time needed to complete: 45 mins
+
++ Start time: 9 
+
++ Finish time: 11:35
+
++ Actual time needed to complete : 2 hours and 35 mins
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
