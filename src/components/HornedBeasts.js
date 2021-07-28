@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 class HornedBeasts extends React.Component {
@@ -28,9 +29,22 @@ class HornedBeasts extends React.Component {
       click: this.state.click + 1,
     });
   };
+
+  selectHorn = (event) => {
+    this.props.image_url;
+      this.props.description;
+      this.props.visible;
+    this.setState({
+      newColor: event.target.name.value
+    });
+  }
   render() {
     return (
       <div>
+        <Form.Select aria-label="Choose Horns images">
+          <option>Select Number if horns</option>
+          <option value={(event => this.selectHorn(event))}  name="hornNum">One</option>
+        </Form.Select>
         <Card style={{ width: "18rem" }} key={this.props.keyword}>
           <Card.Img
             variant="top"
