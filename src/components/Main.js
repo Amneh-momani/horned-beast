@@ -16,6 +16,22 @@ class Main extends React.Component {
               keyword={imag.keyword}
               modalVisible={this.props.modalVisible}
               modalData={this.props.modalData}
+
+              select={this.props.selectHorn.filter((img) => {
+                return(
+                  <select.title
+                title={img.title}
+                description={img.description}
+                image_url={img.image_url}
+                horns={img.horns}
+                keyword={img.keyword}
+                modalVisible={this.props.modalVisible}
+                modalData={this.props.modalData}
+                />
+                );
+              })
+            }
+
             />
           );
         })}

@@ -42,6 +42,7 @@ class App extends React.Component {
           visible={this.state.visible}
           modalUpdateVisible={this.modalUpdateVisible}
           modalData={this.modalData}
+          select={this.props.selectHorn}
         />
         <Header />
         <Main
