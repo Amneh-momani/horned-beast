@@ -1,6 +1,6 @@
 import React from "react";
 import HornedBeasts from "./HornedBeasts";
-import Horned from "./horned.json";
+import Horned from "./data.json";
 
 class Main extends React.Component {
   render() {
@@ -14,7 +14,8 @@ class Main extends React.Component {
               image_url={imag.image_url}
               horns={imag.horns}
               keyword={imag.keyword}
-              modalVisible={this.props.modalVisible}
+              click={imag.click}
+              modalUpdateVisible={this.props.modalUpdateVisible}
               modalData={this.props.modalData}
             />
           );

@@ -11,19 +11,21 @@ class HornedBeasts extends React.Component {
     };
   }
 
-  // clickedImg = () => {
-  //   this.setState({
-  //     click: this.state.click + 1,
-  //   });
-  // };
+  clickedImg = () => {
+    this.setState({
+      click: this.state.click + 1,
+    });
+  };
 
   cardView = () => {
+    this.props.modalUpdateVisible();
+
     this.props.modalData(
-      this.props.image_url,
+      this.props.title,
       this.props.description,
-      this.props.visible
+      this.props.image_url,
+      this.props.click
     );
-    this.props.modalUpdateVisible;
     this.setState({
       click: this.state.click + 1,
     });
@@ -37,12 +39,12 @@ class HornedBeasts extends React.Component {
             src={this.props.image_url}
             alt={this.props.horns}
             title={this.props.keyword}
-            onClick={() => this.props.cardView}
+            onClick={this.cardView}
           />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>Favorited :{this.state.click}</Card.Text>
-            <Button onClick={this.cardView} variant="primary">
+            <Card.Text>Favorited :{this.state.click} 😍😍</Card.Text>
+            <Button onClick={this.clickedImg} variant="primary">
               give {this.props.keyword} Like
             </Button>
           </Card.Body>

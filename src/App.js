@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "./components/Main";
-import Horned from "./components/horned.json";
+import Horned from "./components/data.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SelectedBeast from "./components/SelectedBeast ";
@@ -13,22 +13,22 @@ class App extends React.Component {
       title: null,
       image_url: null,
       description: null,
-      count: 0,
+      click: 0
     };
   }
 
-  modalData = () => {
+  modalData = (title, description, image_url, click) => {
     this.setState({
-      title: null,
-      image_url: null,
-      description: null,
-      count: 0,
+      title: title,
+      image_url: image_url,
+      description: description,
+      click: click
     });
   };
 
   modalUpdateVisible = () => {
     this.setState({
-      visible: this.state.visible
+      visible: !this.state.visible,
     });
   };
 
@@ -40,6 +40,7 @@ class App extends React.Component {
           image_url={this.state.image_url}
           description={this.state.description}
           visible={this.state.visible}
+          click={this.state.click}
           modalUpdateVisible={this.modalUpdateVisible}
           modalData={this.modalData}
         />
