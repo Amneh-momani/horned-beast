@@ -4,6 +4,9 @@ import Horned from "./components/data.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SelectedBeast from "./components/SelectedBeast ";
+import Container from "react-bootstrap/Container";
+
+// import Hornsform from "./components/Hornsform";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +16,7 @@ class App extends React.Component {
       title: null,
       image_url: null,
       description: null,
-      click: 0
+      click: 0,
     };
   }
 
@@ -22,7 +25,7 @@ class App extends React.Component {
       title: title,
       image_url: image_url,
       description: description,
-      click: click
+      click: click,
     });
   };
 
@@ -46,11 +49,14 @@ class App extends React.Component {
           select={this.props.selectHorn}
         />
         <Header />
-        <Main
-          data={Horned}
-          modalUpdateVisible={this.modalUpdateVisible}
-          modalData={this.modalData}
-        />
+        <Container>
+          <Main
+            data={Horned}
+            modalUpdateVisible={this.modalUpdateVisible}
+            modalData={this.modalData}
+          />
+        </Container>
+
         <Footer />
       </div>
     );
