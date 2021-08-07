@@ -11,7 +11,7 @@ class Main extends React.Component {
     };
   }
   changeFilter = (changeFilter) => {
-    console.log('coming from main');
+    console.log("coming from main");
     this.setState({
       changeFilter: changeFilter,
     });
@@ -22,7 +22,8 @@ class Main extends React.Component {
       <main>
         <Hornsform changeFilter={this.changeFilter} />
 
-        {this.props.hornData.filter((element) => {
+        {this.props.hornData
+          .filter((element) => {
             if (this.state.changeFilter === element.horns) {
               return element;
             } else if (this.state.changeFilter === 0) {
