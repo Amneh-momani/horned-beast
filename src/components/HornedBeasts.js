@@ -2,60 +2,52 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-// import Col from "react-bootstrap/Col";
 
 class HornedBeasts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      click: 0,
+      numberOfFavorites: 0,
     };
   }
 
-  clickedImg = () => {
-    this.setState({
-      click: this.state.click + 1,
-    });
-  };
-
-  cardView = () => {
-    this.props.modalUpdateVisible();
-
-    this.props.modalData(
+  viewBeast = () => {
+    this.props.updatingShow();
+    this.props.dataModeling(
       this.props.title,
-      this.props.description,
       this.props.image_url,
-      this.props.click
+      this.props.description,
+      this.props.horn,
+      this.props.keyword,
+      this.state.numberOfFavorites
     );
-    this.setState({
-      click: this.state.click + 1,
-    });
   };
-
-  selectHorn = (event) => {
-    this.props.image_url;
-    this.props.description;
-    this.props.visible;
+  favBeast = () => {
     this.setState({
-      newColor: event.target.name.value,
+      numberOfFavorites: this.state.numberOfFavorites + 1,
     });
   };
   render() {
     return (
       <div>
-        <Card style={{ width: "20rem" }} key={this.props.keyword}>
+        <Card style={{ width: "20rem" }}>
           <Card.Img
             variant="top"
+            onClick={() => {
+              this.viewBeast();
+            }}
             src={this.props.image_url}
-            alt={this.props.horns}
-            title={this.props.keyword}
-            onClick={this.cardView}
+            alt={this.props.keyword}
           />
           <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>Favorited :{this.state.click} 😍😍</Card.Text>
-            <Button onClick={this.clickedImg} variant="primary">
-              give {this.props.keyword} Like
+            <Card.Title> Title: {this.props.title}</Card.Title>
+            <Card.Text>
+              {this.props.description}
+              Favorite beasts: {this.state.numberOfFavorites} 😍😍
+            </Card.Text>
+            <Button variant="primary" onClick={this.favBeast}>
+              {" "}
+              Give Like
             </Button>
           </Card.Body>
         </Card>

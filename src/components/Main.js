@@ -2,55 +2,49 @@ import React from "react";
 import HornedBeasts from "./HornedBeasts";
 import Hornsform from "./Hornsform";
 
-// import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Horned from "./data.json";
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectHorn: 1,
-      hornArrFilter: this.props.Horned,
+      changeFilter: 0,
+      hornFilter: -1,
     };
   }
-
-  filterHornBeasts = (filterBeasts) => {
+  changeFilter = (changeFilter) => {
+    console.log('coming from main');
     this.setState({
-      hornArrFilter: filterBeasts
+      changeFilter: changeFilter,
     });
   };
   render() {
+    console.log(this.state.changeFilter);
     return (
-      <div>
-        <Hornsform
-          title={this.state.title}
-          description={this.state.description}
-          image_url={this.state.image_url}
-          horns={this.state.horns}
-          keyword={this.state.keyword}
-          modalVisible={this.props.modalVisible}
-          modalData={this.props.modalData}
-          filterHornBeasts={this.props.filterHornBeasts}
-          data={Horned}
-        />
-        {Horned.map((imag) => {
-          return (
-            <Col xs={12} md={8}>
+      <main>
+        <Hornsform changeFilter={this.changeFilter} />
+
+        {this.props.Horned.filter((element) => {
+            if (this.state.changeFilter === element.horns) {
+              return element;
+            } else if (this.state.changeFilter === 0) {
+              return element;
+            }
+          })
+          .map((beast) => {
+            return (
               <HornedBeasts
-                title={imag.title}
-                description={imag.description}
-                image_url={imag.image_url}
-                horns={imag.horns}
-                keyword={imag.keyword}
-                click={imag.click}
-                modalUpdateVisible={this.props.modalUpdateVisible}
-                modalData={this.props.modalData}
+                title={beast.title}
+                image_url={beast.image_url}
+                description={beast.description}
+                keyword={beast.keyword}
+                horns={beast.horns}
+                hornFunction={this.props.hornedBeastsFav}
+                favBeast={this.props.favBeast}
+                updatingShow={this.props.updatingShow}
+                dataModeling={this.props.dataModeling}
               />
-            </Col>
-          );
-        })}
-      </div>
+            );
+          })}
+      </main>
     );
   }
 }
